@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { LoginComponent} from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { routing } from './app-routing.module';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     routing,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

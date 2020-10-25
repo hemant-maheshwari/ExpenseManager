@@ -1,35 +1,3 @@
-.center-image{
-  margin-top: 2.8%;
-  margin-bottom: 0%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 10%;
-}
-
-.primary-color-blue-text{
-  color: #01233f;
-}
-
-.primary-color-blue-background{
-  background-color: #01233f;
-}
-
-.secondary-color-yellow-text{
-  color: #f2af58;
-}
-
-.secondary-color-yellow-background{
-  background-color: #f2af58;
-}
-
-.third-color-gray-text{
-  color: #51525e;
-}
-
-.third-color-gray-background{
-  background-color: #51525e;
-}
 
 #login .container #login-row #login-column #login-box {
   margin-top: 10%;
@@ -44,5 +12,6 @@
 #login .container #login-row #login-column #login-box #login-form #register-link {
   margin-top: -85px;
 }
+
 
 

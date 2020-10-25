@@ -8,16 +8,16 @@
             <form id="login-form" class="form" method="post" action="">
               <div class="form-group">
                 <label for="username" class="primary-color-blue-text">Username </label>
-                <input type="text" name="username" id="username" class="form-control">
+                <input type="text" name="username" id="username" class="form-control" required>
               </div>
               <div class="form-group">
                 <label for="password" class="primary-color-blue-text">Password </label>
-                <input type="password" name="password" id="password" class="form-control">
-                <a href="#" class="text-sm-left text-info">Forgot your password?</a>
+                <input type="password" name="password" id="password" class="form-control" required>
+                <a routerLink="/forgot-password" class="text-sm-left text-info">Forgot your password?</a>
                 <label for="remember-me" class="text-info float-right"><span>Remember me  </span><span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
               </div>
               <div class="form-group">
-                <input type="submit" name="login-button" class="btn primary-color-blue-background btn-dark btn-md form-control" value="Login">
+                <button type="submit" name="login-button" class="btn primary-color-blue-background text-white form-control">Login</button>
                 <div class="text-center">
                   <label>Not a member?</label><a routerLink="/register" class="text-info text-center"> Sign up here!</a>
                 </div>
