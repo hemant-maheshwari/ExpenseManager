@@ -1,1 +1,51 @@
-<p>register works!</p>
+<body>
+  <div id="register">
+    <img class="center-image" src="assets/images/LoginIcon.png" alt="Expense Manager Logo">
+    <div class="container">
+      <div id="register-row" class="row justify-content-center align-items-center">
+        <div id="register-column" class="col-md-6">
+          <div id="register-box" class="col-md-12 shadow-lg rounded">
+            <form id="register-form" class="form was-validated" method="post" action="">
+              <div class="form-group">
+                <label for="firstname" class="primary-color-blue-text"> First Name</label>
+                <input type="text" name="firstname" id="firstname" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="lastname" class="primary-color-blue-text"> Last Name</label>
+                <input type="text" name="lastname" id="lastName" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="email" class="primary-color-blue-text"> Email </label>
+                <input type="email" name="email" id="email" class="form-control" required>
+                <div class="invalid-feedback">Please enter a valid email.</div>
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="form-group">
+                <label for="username" class="primary-color-blue-text"> Username</label>
+                <input type="text" name="username" id="username" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="password" class="primary-color-blue-text">Password </label>
+                <input type="password" name="password" id="password" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="passwordConfirmation" class="primary-color-blue-text"> Confirm Password </label>
+                <input type="password" name="passwordConfirmation" id="passwordConfirmation" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="primary-color-blue-text"> Phone Number </label>
+                <input type="tel" id="phone" name="phone" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn primary-color-blue-background text-white col-sm-12 mt-3">Register</button>
+                <div class="text-center">
+                  <label>Already have an account?</label><a routerLink="/" class="text-center text-info"> Back to Login</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
