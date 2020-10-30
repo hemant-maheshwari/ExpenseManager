@@ -5,8 +5,8 @@
       <div id="register-row" class="row justify-content-center align-items-center">
         <div id="register-column" class="col-md-6">
           <div id="register-box" class="col-md-12 shadow-lg rounded">
-            <form id="register-form" class="form was-validated" method="post" action="">
-              <div class="form-group">
+            <form id="register-form" class="form was-validated" method="post" action="" oninput='confirmPassword.setCustomValidity(confirmPassword.value != password.value ? "Passwords do not match." : "")'>
+            <div class="form-group">
                 <label for="firstname" class="primary-color-blue-text"> First Name</label>
                 <input type="text" name="firstname" id="firstname" class="form-control" required>
               </div>
@@ -21,6 +21,10 @@
                 <div class="valid-feedback">Looks good!</div>
               </div>
               <div class="form-group">
+                <label for="phone" class="primary-color-blue-text"> Phone Number </label>
+                <input type="tel" id="phone" name="phone" class="form-control"  minlength="10" maxlength="10" required>
+              </div>
+              <div class="form-group">
                 <label for="username" class="primary-color-blue-text"> Username</label>
                 <input type="text" name="username" id="username" class="form-control" required>
               </div>
@@ -30,14 +34,10 @@
               </div>
               <div class="form-group">
                 <label for="passwordConfirmation" class="primary-color-blue-text"> Confirm Password </label>
-                <input type="password" name="passwordConfirmation" id="passwordConfirmation" class="form-control" required>
+                <input type="password" name="confirmPassword" id="passwordConfirmation" class="form-control" required>
               </div>
-              <div class="form-group">
-                <label for="phone" class="primary-color-blue-text"> Phone Number </label>
-                <input type="tel" id="phone" name="phone" class="form-control" required>
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn primary-color-blue-background text-white col-sm-12 mt-3">Register</button>
+              <div class="col text-center">
+                <button type="submit" class="btn primary-color-blue-background text-white col-sm-10 mt-3">Register</button>
                 <div class="text-center">
                   <label>Already have an account?</label><a routerLink="/" class="text-center text-info"> Back to Login</a>
                 </div>
