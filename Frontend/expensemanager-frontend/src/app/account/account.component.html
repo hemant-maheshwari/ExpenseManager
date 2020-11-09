@@ -1,1 +1,36 @@
-<p>account works!</p>
+<body>
+  <div id="account">
+    <div class="container">
+      <div id="account-row" class="row justify-content-center align-items-center">
+        <div id="account-column" class="col-md-6">
+          <div id="account-box" class="shadow-lg rounded col-md-12 mt-lg-5 pb-3">
+            <div class="text-center">
+              <h2 class="h2 mt-lg-3 primary-color-blue-text pb-4">Edit Account</h2>
+            </div>
+            <form id="account-form" class="form" method="post" action="">
+              <div class="form-group">
+                <label for="firstName" class="primary-color-blue-text">First Name </label>
+                <input id="firstName" name="firstName" type="text" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName" class="primary-color-blue-text">Last Name </label>
+                <input id="lastName" name="lastName" type="text" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="email" class="primary-color-blue-text">Email </label>
+                <input id="email" name="email" type="email" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="primary-color-blue-text">Phone </label>
+                <input id="phone" name="phone" type="tel" class="form-control" required>
+              </div>
+              <div class="col text-center pt-4">
+                <button type="submit" name="account-button" class="btn primary-color-blue-background text-white col-sm-10">Update</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
