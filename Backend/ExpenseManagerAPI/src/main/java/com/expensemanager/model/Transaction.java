@@ -22,7 +22,7 @@ public class Transaction {
 	String dateCreated;
 	String dateUpdated;
 	
-	@OneToMany(mappedBy = "shares")
+	@OneToMany(mappedBy = "transaction")
 	List<Share> shares;
 	
 	public String getTitle() {

@@ -1,10 +1,12 @@
 package com.expensemanager.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.expensemanager.model.User;
 import com.expensemanager.repository.UserRepository;
 
+@Service
 public class UserService {
 
 	@Autowired
