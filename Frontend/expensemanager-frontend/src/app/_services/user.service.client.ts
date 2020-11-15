@@ -8,10 +8,16 @@ import { User } from '../_models/user';
 export class UserService{
 // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient) { }
 
-  }
   register(user: User) {
-    return this.http.post(`${config.apiUrl}/users/register`, user);
+    //                  ${config.apiUrl}
+    return this.http.post(`/users/register`, user);
+  }
+
+  updateAccount(user: User){
+    return this.http.post('/users/updateAccount', user);
   }
 }
+// The user service contains a standard set of CRUD methods for managing users,
+// it acts as the interface between the Angular application and the backend api.

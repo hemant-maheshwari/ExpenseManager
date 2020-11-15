@@ -28,6 +28,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           return getUsers();
         case url.match(/\/users\/\d+$/) && method === 'DELETE':
           return deleteUser();
+        case url.endsWith('/users/updateAccount') && method === 'POST':
+          return updateUser();
         default:
           // pass through any requests not handled above
           return next.handle(request);
@@ -45,15 +47,30 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         username: user.username,
         firstName: user.firstName,
         lastName: user.lastName,
+        phoneNumber: user.phoneNumber,
+        email: user.email,
+        password: user.password,
         token: 'fake-jwt-token'
-      })
+      });
+    }
+
+    function updateUser() {
+      if (!isLoggedIn()) { return unauthorized(); }
+      const updatedUser = body;
+      for (let index in users){
+        if (users[index].id === updatedUser.id) {
+          users[index] = updatedUser;
+        }
+      }
+      localStorage.setItem('users', JSON.stringify(users));
+      return ok();
     }
 
     function register() {
-      const user = body
+      const user = body;
 
       if (users.find(x => x.username === user.username)) {
-        return error('Username "' + user.username + '" is already taken')
+        return error('Username "' + user.username + '" is already taken');
       }
 
       user.id = users.length ? Math.max(...users.map(x => x.id)) + 1 : 1;
@@ -79,7 +96,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     // helper functions
 
     function ok(body?) {
-      return of(new HttpResponse({ status: 200, body }))
+      return of(new HttpResponse({ status: 200, body }));
     }
 
     function error(message) {

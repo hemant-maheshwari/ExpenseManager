@@ -17,12 +17,12 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
-  {path: 'expenses', component: ExpensesComponent},
-  {path: 'transaction', component: TransactionComponent},
-  {path: 'friends', component: FriendsComponent},
-  {path: 'add-friend', component: AddFriendComponent},
-  {path: 'account', component: AccountComponent},
-  {path: 'activity', component: ActivityComponent},
+  {path: 'expenses', component: ExpensesComponent, canActivate: [AuthGuard] },
+  {path: 'transaction', component: TransactionComponent, canActivate: [AuthGuard] },
+  {path: 'friends', component: FriendsComponent, canActivate: [AuthGuard] },
+  {path: 'add-friend', component: AddFriendComponent, canActivate: [AuthGuard] },
+  {path: 'account', component: AccountComponent, canActivate: [AuthGuard] },
+  {path: 'activity', component: ActivityComponent, canActivate: [AuthGuard] },
 
   // otherwise, redirect to home
   {path: '***', redirectTo: '' }

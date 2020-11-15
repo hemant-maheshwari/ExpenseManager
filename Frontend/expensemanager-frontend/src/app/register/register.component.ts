@@ -51,6 +51,7 @@ export class RegisterComponent implements OnInit {
 
     this.alertService.clear();
 
+    // stop here if form is invalid
     if (this.registerForm.invalid) {
       return;
     }
@@ -60,7 +61,7 @@ export class RegisterComponent implements OnInit {
       .subscribe(
         data => {
           this.alertService.success('Registration Successful', true);
-          this.router.navigate(['/login']);
+          this.router.navigate(['/']);
         },
         error => {
           this.alertService.error(error);
