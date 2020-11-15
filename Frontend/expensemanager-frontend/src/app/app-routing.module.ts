@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './_helpers/auth.guard';
+
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {ForgotPasswordComponent} from './forgot-password/forgot-password.component';
@@ -11,7 +13,8 @@ import {AccountComponent} from './account/account.component';
 import {ActivityComponent} from './activity/activity.component';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
+  {path: '', component: ExpensesComponent, canActivate: [AuthGuard] },
+  {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'expenses', component: ExpensesComponent},
@@ -19,7 +22,10 @@ const routes: Routes = [
   {path: 'friends', component: FriendsComponent},
   {path: 'add-friend', component: AddFriendComponent},
   {path: 'account', component: AccountComponent},
-  {path: 'activity', component: ActivityComponent}
+  {path: 'activity', component: ActivityComponent},
+
+  // otherwise, redirect to home
+  {path: '***', redirectTo: '' }
 ];
 
 export const routing = RouterModule.forRoot(routes);
@@ -30,3 +36,14 @@ export const routing = RouterModule.forRoot(routes);
 })
 
 export class AppRoutingModule { }
+
+// Routing for the Angular app is configured as an array of Routes, each component is
+// mapped to a path so the Angular Router knows which component to display based on the URL
+// in the browser address bar. The home route is secured by passing the AuthGuard to the canActivate
+// property of the route.
+
+// The Routes array is passed to the RouterModule.forRoot() method which creates a routing module
+// with all of the app routes configured, and also includes all of the Angular Router providers
+// and directives such as the <router-outlet></router-outlet> directive. For more information
+// on Angular Routing and Navigation see https://angular.io/guide/router.
+
